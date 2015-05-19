@@ -1,10 +1,10 @@
 {include file='layouts/header.tpl'}
 <body>
     <!--header start-->
-    <header class="header black-bg">
-        <div class="container">
+    <header class="header navbar-inverse">
+        <div class="container ">
             <nav class="collapse navbar-collapse bs-navbar-collapse">
-                <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav ">
                     <li>
                         <a href="/">{$g.sitename}</a>
                     </li>
@@ -30,7 +30,7 @@
             </nav>
         </div>
     </header>
-    <div class="container">
+    <div class="container" style="margin-top:50px;">
     {block name=content}{/block}   
 </div>
 {include file="layouts/footer.tpl"}
