@@ -55,7 +55,7 @@ $autoload['packages'] = array();
   |	$autoload['libraries'] = array('database', 'session', 'xmlrpc');
  */
 
-$autoload['libraries'] = array('gas', 'session', 'database');
+$autoload['libraries'] = array('gas', 'session', 'database', 'smarty');
 
 
 /*
@@ -67,7 +67,7 @@ $autoload['libraries'] = array('gas', 'session', 'database');
   |	$autoload['helper'] = array('url', 'file');
  */
 
-$autoload['helper'] = array('url', 'file');
+$autoload['helper'] = array('url', 'file', 'asset');
 
 
 /*
@@ -83,7 +83,7 @@ $autoload['helper'] = array('url', 'file');
   |
  */
 
-$autoload['config'] = array();
+$autoload['config'] = array('asset');
 
 
 /*
