@@ -22,10 +22,17 @@
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="javascript:;">注册</a>
-                    </li>
-                    <li><a href="javascript:;">登录</a></li>
+                    {if !empty($smarty.session.user)}
+                        <li>
+                            <a href="{site_url('/profile/')}/{$smarty.session.user.id}">{$smarty.session.user.email}</a>
+                        </li>
+
+                    {else}
+                        <li>
+                            <a href="{site_url('/page/register')}">注册</a>
+                        </li>
+                        <li><a href="{site_url('/page/login')}">登录</a></li>
+                        {/if}
                 </ul>
             </nav>
         </div>

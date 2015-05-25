@@ -18,6 +18,8 @@ class page extends BaseController {
     //put your code here
 
     function index() {
+        $this->load->model('UserModel');
+        $users = $this->UserModel->get_all();
         $data = array('schools' => array(
                 array('name' => '大连理工大学', 'value' => 1),
                 array('name' => '北京大学', 'value' => 2),
@@ -30,16 +32,20 @@ class page extends BaseController {
                 array('name' => '郑州', 'value' => 1),
                 array('name' => '北京', 'value' => 2),
             ),
+            'users' => $users
         );
+
         $this->smarty->view('index.tpl', $data);
     }
 
     function register() {
+        $data['curtime'] = base64_encode(time());
         $this->smarty->view('register.tpl');
     }
 
     function login() {
-        $this->smarty->view('login.tpl');
+        $data['curtime'] = base64_encode(time());
+        $this->smarty->view('login.tpl', $data);
     }
 
 }

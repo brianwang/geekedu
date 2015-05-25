@@ -12,6 +12,8 @@ if (!defined('BASEPATH'))
  *
  * @author Administrator
  */
-class school extends MY_Controller {
+class School extends ModelController {
     //put your code here
+      protected $modelname = 'school';
+      protected $modelclass = 'school_model';
 }

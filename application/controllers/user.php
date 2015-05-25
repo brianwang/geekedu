@@ -1,5 +1,4 @@
 <?php
-
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 /*
@@ -13,8 +12,6 @@ if (!defined('BASEPATH'))
  *
  * @author Administrator
  */
-class Student extends ModelController {
-
-    protected $modelclass = 'StudentModel';
-
+class User extends ModelController {
+    //put your code here
 }

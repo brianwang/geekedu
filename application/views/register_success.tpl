@@ -1,15 +1,12 @@
-{extends file='layouts\col1.tpl'}
-{block name=content}
     <div>
         <form action="{site_url('/auth/register')}" method='post'>                   
-            
+            <div class="form-group">
+                <label for="name">用户名</label>
+                <input type="text" name="username" placeholder="用户名"/>
+            </div>
             <div class="form-group">
                 <label for="email">邮件</label>
                 <input type="text" name="email" placeholder="邮件"/>
-            </div>
-            <div class="form-group">
-                <label for="nickname">昵称</label>
-                <input type="text" name="nickname" placeholder="昵称"/>
             </div>
             <div class="form-group">
                 <label for="password">密码</label>
@@ -22,4 +19,3 @@
             <button>添加用户</button>
         </form>
     </div>
-{/block}

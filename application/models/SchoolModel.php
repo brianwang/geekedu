@@ -1,7 +1,5 @@
 <?php
 
-if (!defined('BASEPATH'))
-    exit('No direct script access allowed');
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -9,12 +7,11 @@ if (!defined('BASEPATH'))
  */
 
 /**
- * Description of page
+ * Description of user_model
  *
  * @author Administrator
  */
-class Student extends ModelController {
-
-    protected $modelclass = 'StudentModel';
-
+class SchoolModel extends MY_Model {
+    //put your code here   */
+    protected $_table = 'schools';
 }

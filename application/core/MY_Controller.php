@@ -35,18 +35,27 @@ class ModelController extends BaseController {
 
     //添加计划
     public function add() {
-        if ($this->input->is_post()) {
-            $validatename = strtolower($this->modelname . '_valid');
-            if ($this->form_validation->run($validatename) == TRUE) {
-                $data = $this->input->post();
-                $data = $this->{$this->modelclass}->insert($data, true);
-                $this->output->json(array('result' => 'success'));
+        if (isset($_SESSION['user'])) {
+            if ($this->input->is_post()) {
+                $validatename = strtolower($this->modelname . '_valid');
+                if ($this->form_validation->run($validatename) == TRUE) {
+                    $data = $this->input->post();
+                    $user = $this->{$this->modelclass}->get_by(array('uid' => $data['uid']));
+                    if (empty($user)) {
+                        $data = $this->{$this->modelclass}->insert($data, true);
+                    } else {
+                        $this->{$this->modelclass}->update($data['uid'], $data, true);
+                    }
+                    $this->output->json(array('result' => 'success'));
+                } else {
+                    $errors = validation_errors();
+                    $this->output->json($errors);
+                }
             } else {
-                $errors = validation_errors();
-                $this->output->json($errors);
+                $this->output->json(array('error' => '必须使用post'));
             }
         } else {
-            $this->output->json(array('error' => '必须使用post'));
+            $this->output->json(array('error' => '请登录'));
         }
     }
 
